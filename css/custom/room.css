@@ -1,0 +1,8 @@
+.form_add_room button{
+    margin: 30px 0px 30px 30px;
+    padding: 10px 100px 10px 100px;
+}
+.table_room{
+    height: 400px ;
+    overflow-y: scroll;
+}

@@ -1,0 +1,69 @@
+<section>
+  <div class="text_cimena">
+    <h2 style="text-align: center">Rạp chiếu phim</h2>
+  </div>
+  <form action="">
+    <div class="search_customer">
+      <input type="text" placeholder="Tìm kiếm rạp chiếu" />
+      <button type="submit"><i class="bx bx-search-alt-2"></i></button>
+    </div>
+  </form>
+  <form action="" class="form_add_movie">
+    <div class="seat_input">
+      <div class="row g-3">
+        <div class="col">
+          <div class="input-box">
+            <label for="">Tên rạp</label>
+            <input type="text" required ng-model="listAddCinema.name"/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-box">
+            <label for="">Địa chỉ rạp</label>
+            <input type="text" required ng-model="listAddCinema.address"/>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col">
+          <div class="input-box">
+            <label for="">Mô tả</label>
+            <input type="text" required ng-model="listAddCinema.description"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success" ng-click="addCinema($event, $index)">
+      Thêm rạp chiếu
+    </button>
+  </form>
+  <div class="table_customer">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Mã rạp</th>
+          <th scope="col">Tên rạp</th>
+          <th scope="col">Địa chỉ rạp</th>
+          <th scope="col">Mô tả</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cinema in listCinema">
+          <th scope="row">{{cinema.code}}</th>
+          <td>{{cinema.name}}</td>
+          <td>{{cinema.address}}</td>
+          <td>{{cinema.description}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-success">
+              <i class="bx bx-revision"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger" ng-click="deleteCinema($event, $index)">
+              <i class="bx bxs-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

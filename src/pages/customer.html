@@ -1,0 +1,94 @@
+<section>
+  <form action="">
+    <div class="search_customer">
+      <input type="text" placeholder="Tìm kiếm tài khoản" />
+      <button type="submit"><i class="bx bx-search-alt-2"></i></button>
+    </div>
+  </form>
+  <form action="" class="form_add_movie">
+    <div class="seat_input">
+      <div class="row g-3">
+        <div class="col">
+          <div class="input-box">
+            <label for="">Tên người dùng</label>
+            <input type="text" required ng-model="listAddCustomer.name"/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-box">
+            <label for="">Số điện thoại</label>
+            <input type="text" required ng-model="listAddCustomer.phoneNumeber"/>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col">
+          <div class="input-box">
+            <label for="">Email</label>
+            <input type="email" required ng-model="listAddCustomer.email"/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-box">
+            <label for="">Mật khẩu</label>
+            <input type="password" required ng-model="listAddCustomer.password"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success" ng-click="addCustomer($event)">
+      Thêm tài khoản
+    </button>
+  </form>
+  <div class="table_customer">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Mã KH</th>
+          <th scope="col">Tên KH</th>
+          <th scope="col">Số điện thoại</th>
+          <!-- <th scope="col">Hạng KH</th> -->
+          <th scope="col">Email</th>
+          <th scope="col">Điểm tích lũy</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="customer in listCustomer">
+          <th scope="row">{{customer.code}}</th>
+          <td>{{customer.name}}</td>
+          <td>{{customer.phoneNumber}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.point}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-success">
+              <i class="bx bx-revision"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger" ng-click="deleteCustomer($event, $index)">
+              <i class="bx bxs-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page_customer">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>

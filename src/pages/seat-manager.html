@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/custom/seat-manager.css" />
+  </head>
+  <body>
+    <section class="seat_session">
+      <ul class="showcase">
+        <li>
+          <div class="seat_1"></div>
+          <small>Ghế chưa chọn</small>
+        </li>
+        <li>
+          <div class="seat_1 selected"></div>
+          <small>Ghế đang chọn</small>v
+        </li>
+        <li>
+          <div class="seat_1 sold"></div>
+          <small>Ghế đã chọn</small>
+        </li>
+      </ul>
+      <div class="screen">
+        <img src="../../assets/img/bg-screen.png" alt="">
+      </div>
+      <div class="seat_manager_container">
+        <div class="seat_row">
+          <div class="seat_manager" ng-repeat="seat in listSeat">{{seat.code}}</div>
+          <!-- <div class="seat_manager">{{seat.number}}</div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div> -->
+        </div>
+        <!-- <div class="seat_row">
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+        </div>
+        <div class="seat_row">
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+        </div>
+        <div class="seat_row">
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+        </div>
+        <div class="seat_row">
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager"></div>
+          <div class="seat_manager sold"></div>
+          <div class="seat_manager"></div>
+        </div> -->
+      </div>
+    </section>
+  </body>
+</html>

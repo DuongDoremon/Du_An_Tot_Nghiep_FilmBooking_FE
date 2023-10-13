@@ -1,0 +1,149 @@
+
+<section>
+  <form action="">
+    <div class="search_customer">
+      <input type="text" placeholder="Tìm kiếm lịch chiếu" />
+      <button type="submit"><i class="bx bx-search-alt-2"></i></button>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-sm-7">
+      <form action="" class="form_add_schedule">
+        <div class="seat_input">
+          <div class="row g-3">
+            <div class="col">
+              <div class="select_room">
+                <label for="">Phòng chiếu</label>
+                <select class="form-select" aria-label="Default select example" ng-model="listAddSchedule.room">
+                  <option selected>Mời chọn phòng chiếu</option>
+                  <option
+                    value="{{room.id}}"
+                    ng-repeat="room in listRoom"
+                  >
+                    {{room.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="select_room">
+                <label for="">Phim chiếu</label>
+                <select class="form-select" aria-label="Default select example" ng-model="listAddSchedule.movie">
+                  <option selected>Mời chọn phim</option>
+                  <option
+                    value="{{movie.id}}"
+                    ng-repeat="movie in listMovie"
+                  >
+                    {{movie.name}}
+                  </option>
+                </select>
+                <!-- <select class="form-select" aria-label="Default select example">
+                  <option selected>Mời chọn phim</option>
+                  <option
+                    ng-value="movie.id"
+                    ng-repeat="movie1 in listMovie"
+                    ng-model="listAddSchedule.movie"
+                  >
+                    {{movie1.premiereDate}}
+                  </option> -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <div class="input-box">
+                <label for="">Thời gian bắt đầu chiếu</label>
+                <input
+                id="myTimeInput"
+                  type="time"
+                  required
+                  ng-model="listAddSchedule.startAt"
+                  min="08:00"
+                  max="26:00"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-box">
+                <label for="">Thời gian dự kiến kết thúc</label>
+                <input
+                  type="text"
+                  required
+                  ng-model="listAddSchedule.finishAt"
+                  min="00:00:00"
+                  max="23:59:00"
+                  disabled
+                  placeholder="Không nhập vào trường này!!"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-outline-success"
+          ng-click="addSchedule($event)"
+        >
+          Thêm lịch chiếu
+        </button>
+      </form>
+    </div>
+    <div class="col-sm-5">
+      <div class="text_phim_vua_them">
+        <h4>Lịch chiếu vừa thêm</h4>
+      </div>
+      <div class="table_phim_vua_them">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Tên lịch trình</th>
+              <th scope="col">Giờ bắt đầu</th>
+              <th scope="col">Giờ kết thúc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="schedule in listSchedule">
+              <td>{{schedule.name}}</td>
+              <td>{{schedule.startAt}}</td>
+              <td>{{schedule.finishAt}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="table_schedule">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Mã lịch trình</th>
+          <th scope="col">Tên lịch trình</th>
+          <th scope="col">Giờ bắt đầu</th>
+          <th scope="col">Giờ kết thúc</th>
+          <th scope="col">Phòng chiếu</th>
+          <th scope="col">Phim chiếu</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="schedule in listSchedule">
+          <th scope="row">{{schedule.code}}</th>
+          <td>{{schedule.name}}</td>
+          <td>{{schedule.startAt}}</td>
+          <td>{{schedule.finishAt}}</td>
+          <td>{{schedule.room.name}}</td>
+          <td>{{schedule.movie.name}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-success">
+              <i class="bx bx-revision"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger">
+              <i class="bx bxs-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.input-box{
+    border-bottom: 2px solid rgb(119, 119, 119);
+    margin: 20px 50px 0px 0px;
+    position: relative;
+}
+.input-box label{
+    position: absolute;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+    margin-bottom: 10px;
+}
+.row{
+    margin: 20px 0px 0px 0px;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -88px;
+}
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+.seat_input{
+    padding-left: 20px;
+}
+.seat_type{
+    margin: 30px 0px 0px 0px;
+}
+.table_seat{
+    margin: 50px 0px 0px 0px;
+}
+.seat_type_combobox{
+    width: 300px;
+    margin: -38px 0px 0px 100px;
+}
+.form_add_seat button{
+    margin: 30px 0px 0px 25px;
+    padding: 10px 90px 10px 90px;
+}
+.form_search_seat{
+    margin: 30px 0px 0px 0px;
+}
+.table_seat{
+    overflow-y: scroll;
+    height: 400px;
+}
