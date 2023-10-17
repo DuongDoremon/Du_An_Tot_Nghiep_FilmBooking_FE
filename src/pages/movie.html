@@ -14,7 +14,12 @@
     <div class="row row-cols-1 row-cols-md-5 g-4">
       <div class="col-sm-4" ng-repeat="movie in listMovie">
         <div class="card">
-          <img src="{{movie.image}}" class="card-img-top" alt="..." height="400">
+          <img
+            src="{{movie.image}}"
+            class="card-img-top"
+            alt="..."
+            height="400"
+          />
           <div class="card-body">
             <h5 class="card-title">{{movie.name}}</h5>
             <h6 class="card-title">Mã phim: {{movie.code}}</h6>
@@ -22,36 +27,37 @@
             <p class="card-text">Ngày kết thúc: {{movie.endDate}}</p>
             <p class="card-text">Trạng thái: {{movie.status}}</p>
             <div class="button-movie">
-               <button
-              type="button"
-              class="btn btn-outline-success"
-              data-bs-target="#exampleModalToggle"
-              data-bs-toggle="modal"
-              ng-click="detailMovie($event, $index)"
-            >
-              <i class="bx bx-revision"></i>
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary"
-              type="button"
-              class="modalButton"
-              data-bs-target="#exampleModalToggle"
-              ng-click="detailChiTietMovie($event, $index)"
-            >
-              <i class="bx bx-show-alt"></i>
-            </button>
-    <div class="notifications"></div>
-            <button
-              type="button"
-              class="btn btn-outline-danger"
-              id="successfuly"
-              ng-click="deleteMovie($event, $index)"
-            >
-              <i class="bx bxs-trash"></i>
-            </button>
+              <a href="/updateMovie/{{movie.id}}">
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  data-bs-target="#exampleModalToggle"
+                  data-bs-toggle="modal"
+                  ng-click="detailMovie($event, $index)"
+                >
+                  <i class="bx bx-revision"></i>
+                </button>
+              </a>
+              <a href="#detailMovie/{{movie.id}}">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  type="button"
+                >
+                  <i class="bx bx-show-alt"></i></button
+              ></a>
+              <div class="notifications"></div>
+              <a href="#/delete-movie/{{movie.id}}">
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  id="successfuly"
+                  ng-click="deleteMovie($event, $index)"
+                >
+                  <i class="bx bxs-trash"></i>
+                </button>
+              </a>
             </div>
-           
           </div>
         </div>
       </div>
@@ -194,6 +200,21 @@
                     />
                   </div>
                 </div>
+                <div class="col">
+                  <div class="select_rated">
+                    <label for="">Rated</label>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                     
+                    >
+                      <option selected>Mời chọn rated</option>
+                      <option value="{{listUpdateMovie.rated.id}}"  ng-model="listUpdateMovie.rated">
+                        <!-- {{listUpdateMovie.rated}} -->
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div class="row g-3">
                 <div class="col">
@@ -223,7 +244,7 @@
     </div>
   </div>
   <div class="modal_chi_tiet_phim">
-     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Open Modal
   </button>
 

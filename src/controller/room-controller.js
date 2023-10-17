@@ -8,7 +8,7 @@ window.roomController = function($scope, $http){
         $scope.listCinemas = response.data.data;
     })
     listAddRoom = {
-        name:"",
+
         cinema:"",
         type:"",
         capacity:"",

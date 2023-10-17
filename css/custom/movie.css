@@ -94,6 +94,42 @@ input[type="date"]::-webkit-datetime-edit-day-field{
   left: 0px;
   
 } */
-.date_modal input{
-  
+.detail_movie_all{
+  margin: 70px 0px 0px 0px ;
 }
+.item_movie_detail img{
+  width: 530px;
+  height: 730px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgb(159, 159, 159);
+}
+.item_movie_detail img:hover{
+  transform: scale(1.1);
+}
+.text_movie_detail h3{
+  margin: 0px 0px 30px 0px;
+  color: rgb(249, 92, 1);
+  font-weight: bold;
+}
+.text_movie_detail p{
+  font-size: 20px;
+}
+.text_h4{
+  margin: 30px 0px 0px 0px;
+}
+.text_h4 h4{
+  padding: 10px 0px 10px 0px;
+}
+.text_thong_tin{
+  margin: 25px 0px 0px 0px;
+}
+.text_thong_tin p{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 0px 6px 0px;
+}
+/* .trailer_detail_movie{
+
+} */

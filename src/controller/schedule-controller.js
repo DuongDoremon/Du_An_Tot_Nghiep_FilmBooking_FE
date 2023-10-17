@@ -23,7 +23,8 @@ window.scheduleController = function ($scope, $http) {
     event.preventDefault();
     $http.post(addSchedule, $scope.listAddSchedule).then(function (response) {
       $scope.listSchedule.push(response.data.data);
-      window.location.reload();
+      alert("Thêm thành công");
+      // window.location.reload();
     });
   };
   //movie
@@ -36,5 +37,13 @@ window.scheduleController = function ($scope, $http) {
   $http.get(roomApi).then(function(response){
       $scope.listRoom = response.data.data;
   })
-
+  $scope.deleteSchedule = function(event, index){
+    event.preventDefault();
+    let schedule = $scope.listSchedule[index];
+    let api = deleteSchedule + "/" + schedule.id;
+    $http.detele(api).then(function (response){
+      $scope.listSchedule.splice(index, 1);
+      alert("Xóa thành công")
+    })
+  }
 };
