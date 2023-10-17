@@ -1,6 +1,6 @@
 window.movieController = function ($scope, $http) {
   $scope.listMovie = [];
-
+  $scope.listRated = [];
   $scope.listAddMovie = {
     name: "",
     movieDuration: "",
@@ -13,11 +13,14 @@ window.movieController = function ($scope, $http) {
     image: "",
     movieType: "",
     description: "",
+    rated:""
   };
   $http.get(movieApi).then(function (response) {
     $scope.listMovie = response.data.data;
   });
-
+  $http.get(ratedApi).then(function(response){
+    $scope.listRated = response.data.data;
+  })
   $scope.addMovie = function (event) {
     event.preventDefault();
     $http.post(addMovie, $scope.listAddMovie).then(function (response) {
@@ -46,7 +49,8 @@ window.movieController = function ($scope, $http) {
     image: "",
     movieType: "",
     description: "",
-    code:""
+    code:"",
+    rated:""
   };
   $scope.viTri = -1;
   $scope.updateMovie = function (event, index) {

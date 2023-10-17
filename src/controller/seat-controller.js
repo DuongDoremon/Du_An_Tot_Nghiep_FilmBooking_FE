@@ -1,6 +1,7 @@
 window.seatController = function ($scope, $http) {
   $scope.listSeat = [];
   $scope.listPageSeat = [];
+  $scope.listCinema = [];
   $http.get(seatApi).then(function (response) {
     $scope.listSeat = response.data.data;
     $scope.listSeat.sort(function (a, b) {
@@ -20,6 +21,9 @@ window.seatController = function ($scope, $http) {
   $scope.listRoom = [];
   $http.get(roomApi).then(function (response) {
     $scope.listRoom = response.data.data;
+  });
+  $http.get(cinemaApi).then(function (response) {
+    $scope.listCinema = response.data.data;
   });
   $scope.listAddSeat = {
     lineNumber: "",

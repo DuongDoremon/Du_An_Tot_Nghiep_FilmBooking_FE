@@ -1,106 +1,151 @@
 <form action="" class="form_add_movie">
-    <div class="seat_input">
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Tên phim</label>
-            <input type="text" required ng-model="listAddMovie.name" id="input_clear"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="input-box">
-            <label for="">Thời lượng phim</label>
-            <input
-              type="number"
-              required
-              ng-model="listAddMovie.movieDuration"
-              id="input_clear"
-            />
-          </div>
+  <div class="seat_input">
+    <div class="row g-3">
+      <div class="col">
+        <div class="input-box">
+          <label for="">Tên phim</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.name"
+            id="input_clear"
+          />
         </div>
       </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Tên đạo diễn</label>
-            <input type="text" required ng-model="listAddMovie.director" id="input_clear"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="input-box">
-            <label for="">Tên diễn viên</label>
-            <input type="text" required ng-model="listAddMovie.performers" id="input_clear"/>
-          </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Ngôn ngữ phim</label>
-            <input type="text" required ng-model="listAddMovie.languages" id="input_clear"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="date">
-            <label for="">Ngày ra mắt</label>
-            <input
-              type="text"
-              required
-              ng-model="listAddMovie.premiereDate"
-              fo
-              id="dateFomat"
-              placeholder="dd/MM/yyyy"
-              onchange="handledatechange()"
-            />
-            <label for="">Ngày kết thúc</label>
-            <input
-              type="text"
-              required
-              ng-model="listAddMovie.endDate"
-              id="dateFomat"
-              placeholder="dd/MM/yyyy"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Thể loại phim</label>
-            <input type="text" required ng-model="listAddMovie.movieType" id="input_clear"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="image_movie">
-            <label for="">Hình ảnh</label>
-            <input type="text" required ng-model="listAddMovie.image" id="input_clear"/>
-          </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Thước phim giới thiệu</label>
-            <input type="text" required ng-model="listAddMovie.trailer" id="input_clear"/>
-          </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Mô tả</label>
-            <input type="text" required ng-model="listAddMovie.description" id="input_clear"/>
-          </div>
+      <div class="col">
+        <div class="input-box">
+          <label for="">Thời lượng phim</label>
+          <input
+            type="number"
+            required
+            ng-model="listAddMovie.movieDuration"
+            id="input_clear"
+          />
         </div>
       </div>
     </div>
-    <div class="notifications"></div>
-    <button
-      type="submit"
-      class="btn btn-outline-success"
-      id="success"
-      ng-click="addMovie($event, $index)"
-    >
-      Thêm phim
-    </button>
-  </form>
+    <div class="row g-3">
+      <div class="col">
+        <div class="input-box">
+          <label for="">Tên đạo diễn</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.director"
+            id="input_clear"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-box">
+          <label for="">Tên diễn viên</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.performers"
+            id="input_clear"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <div class="input-box">
+          <label for="">Ngôn ngữ phim</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.languages"
+            id="input_clear"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="date">
+          <label for="">Ngày ra mắt</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.premiereDate"
+            fo
+            id="dateFomat"
+            placeholder="dd/MM/yyyy"
+            onchange="handledatechange()"
+          />
+          <label for="">Ngày kết thúc</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.endDate"
+            id="dateFomat"
+            placeholder="dd/MM/yyyy"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <div class="rated_select">
+          <label for="">Thể loại phim</label>
+          <!-- <input type="text" required ng-model="listAddMovie.movieType" id="input_clear"/> -->
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            ng-model="listAddMovie.rated"
+          >
+            <option selected>Mời chọn tể loại phim</option>
+            <option ng-repeat="rated in listRated" value="{{rated.id}}">
+              {{rated.code}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="image_movie">
+          <label for="">Hình ảnh</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.image"
+            id="input_clear"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <div class="input-box">
+          <label for="">Thước phim giới thiệu</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.trailer"
+            id="input_clear"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <div class="input-box">
+          <label for="">Mô tả</label>
+          <input
+            type="text"
+            required
+            ng-model="listAddMovie.description"
+            id="input_clear"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="notifications"></div>
+  <button
+    type="submit"
+    class="btn btn-outline-success"
+    id="success"
+    ng-click="addMovie($event, $index)"
+  >
+    Thêm phim
+  </button>
+</form>

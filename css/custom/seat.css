@@ -43,9 +43,61 @@
     padding: 10px 90px 10px 90px;
 }
 .form_search_seat{
-    margin: 30px 0px 0px 0px;
+    margin: 100px 20px 0px 0px;
 }
 .table_seat{
     overflow-y: scroll;
     height: 400px;
 }
+.seat_room {
+    background-color: rgb(124, 124, 123);
+    width: 1500px;
+    height: 800px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 10px 4px 10px 7px rgb(188, 188, 188);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .room_seat_detail {
+    width: 200px;
+    height: 260px;
+    background-color: rgb(114, 114, 239);
+    /* box-shadow: 10px 4px 10px 7px rgb(188, 188, 188); */
+    margin: 20px 0px 0px 30px;
+    border-radius: 20px;
+    /* display: block; */
+    box-shadow: 5px 5px 5px 5px rgb(87, 87, 87);
+    transition: all 0.3s ease;
+    padding: 30px;
+  }
+  .room_seat_detail h5 {
+    text-align: center;
+    /* padding: 50px 0px 0px 0px; */
+  }
+  .room_seat_detail:hover {
+    transform: scale(1.2);
+  }
+  .room_seat_detail button{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 18px 18px;
+    margin: 50px 0px 0px 15px;
+  }
+  .room_seat_detail button:hover{
+    transform: scale(1.3);
+    background-color: rgb(251, 145, 58);
+  }
+  .sestion-add-seat{
+    width: 1000px;
+    height: 300px;
+    background-color: rgb(76, 81, 151);
+    margin: auto;
+    border-radius: 30px;
+  }
+  /*  */
