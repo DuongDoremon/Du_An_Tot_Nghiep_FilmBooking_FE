@@ -25,4 +25,7 @@ window.customerController = function($scope, $http){
         alert("Thêm thành công");
       })
     }
+    $scope.updateCustomer = function(event, index){
+      event.preventDefault();
+    }
 }

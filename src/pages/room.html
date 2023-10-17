@@ -22,44 +22,24 @@
       <div class="row g-3">
         <div class="col">
           <div class="input-box">
-            <label for="">Tên phòng chiếu</label>
+            <label for="">Mời nhập số lượng phòng</label>
             <input type="text" required ng-model="listAddRoom.name"/>
           </div>
         </div>
         <div class="col">
-          <div class="input-box">
-            <label for="">Loại phòng chiếu</label>
-            <input type="text" required ng-model="listAddRoom.type"/>
+          <div class="select_cinema">
+            <label for="">Rạp chiếu</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              ng-model="listAddRoom.cinema.id"
+            >
+              <option selected>Mời chọn rạp chiếu</option>
+              <option value="{{cinema.id}}" ng-repeat="cinema in listCinemas">
+                {{cinema.name}}
+              </option>
+            </select>
           </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Sức chứa</label>
-            <input type="text" required ng-model="listAddRoom.capacity"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="input-box">
-            <label for="">Mô tả</label>
-            <input type="text" required ng-model="listAddRoom.description"/>
-          </div>
-        </div>
-      </div>
-      <div class="row g-3">
-        <div class="select_cinema">
-          <label for="">Rạp chiếu</label>
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            ng-model="listAddRoom.cinema.id"
-          >
-            <option selected>Mời chọn rạp chiếu</option>
-            <option value="{{cinema.id}}" ng-repeat="cinema in listCinemas">
-              {{cinema.name}}
-            </option>
-          </select>
         </div>
       </div>
     </div>

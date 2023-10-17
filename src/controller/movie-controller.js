@@ -1,4 +1,4 @@
-window.movieController = function ($scope, $http) {
+window.movieController = function ($scope, $http, $routeParams) {
   $scope.listMovie = [];
   $scope.listRated = [];
   $scope.listAddMovie = {
@@ -17,6 +17,9 @@ window.movieController = function ($scope, $http) {
   };
   $http.get(movieApi).then(function (response) {
     $scope.listMovie = response.data.data;
+    $scope.detailsMovie = $scope.listMovie.filter((item, index) => {
+      return item.id === $routeParams.id;
+    })[0];
   });
   $http.get(ratedApi).then(function(response){
     $scope.listRated = response.data.data;
@@ -62,6 +65,7 @@ window.movieController = function ($scope, $http) {
     let api = updateMovie + "/" + movie.id;
     $http.put(api, $scope.listUpdateMovie).then(function (response) {
       $scope.listMovie[$scope.viTri] = response.data.data;
+      window.location.reload();
     });
   };
   $scope.detailMovie = function (event, index) {
@@ -80,6 +84,7 @@ window.movieController = function ($scope, $http) {
     $scope.listUpdateMovie.image = movie.image;
     $scope.listUpdateMovie.movieType = movie.movieType;
     $scope.listUpdateMovie.code = movie.code;
+    $scope.listUpdateMovie.rated.id = movie.rated;
     $scope.viTri = index;
   };
   // var current_page = 1;

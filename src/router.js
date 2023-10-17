@@ -57,7 +57,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
       controller: rankController,
     })
     .when("/detailMovie/:id",{
-      templateUrl:"./pages/movie.html",
+      templateUrl:"./page-detail/chi-tiet-phim.html",
       controller: movieController
     })
     .when("/pages-add-movie",{
