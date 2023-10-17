@@ -9,6 +9,7 @@
 }
 .seat_manager_container {
   margin: 40px 0px 100px 0px;
+  width: 100%;
 }
 .seat_manager {
   background-color: rgb(255, 100, 3);
@@ -21,6 +22,7 @@
   font-weight: bold;
   font-size: 20px;
   padding: auto;
+  float: left;
 }
 .seat_1{
     background-color: rgb(255, 100, 3);
@@ -69,9 +71,9 @@
     color: white;
 }
 .seat_row{
-    display: flex;
+    /* display: flex; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .screen{

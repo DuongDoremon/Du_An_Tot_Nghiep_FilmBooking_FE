@@ -22,6 +22,7 @@ window.foodController = function ($scope, $http) {
     $http.post(addFood, $scope.listAddFood).then(function (r) {
       $scope.listFood.push(r.data.data);
       alert("Thêm thành công");
+      window.location.reload();
     });
   };
   $scope.deleteFood = function (event, index) {

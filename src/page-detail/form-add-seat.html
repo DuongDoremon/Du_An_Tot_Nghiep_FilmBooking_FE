@@ -1,0 +1,62 @@
+<section class="sestion-add-seat">
+    <form action="" class="form_add_seat">
+        <div class="seat_input">
+          <div class="row g-3">
+            <div class="col">
+              <div class="input-box">
+                <label for="">Số lượng ghế</label>
+                <input type="number" required ng-model="listAddSeat.number" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-box">
+                <label for="">Hàng ghế</label>
+                <input type="number" ng-model="listAddSeat.lineNumber" />
+              </div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <div class="seat_type">
+                <div class="text_seat_type">
+                  <label for="">Phòng chiếu</label>
+                  <div class="seat_type_combobox">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      ng-model="listAddSeat.idRoom.id"
+                    >
+                      <option selected>Mời chọn phòng chiếu</option>
+                      <option ng-repeat="room in listRoom" value="{{room.id}}">
+                        {{room.name}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col">
+              <div class="input-box">
+                <label for="">Trạng thái ghế</label>
+                <input type="text" required />
+              </div>
+            </div> -->
+          </div>
+          <!-- <div class="row g-3">
+            <div class="col">
+              <div class="input-box">
+                <label for="">Mô tả</label>
+                <input type="text" required />
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <button
+          type="submit"
+          class="btn btn-outline-success"
+          ng-click="addSeat($event)"
+        >
+          Thêm ghế
+        </button>
+      </form>
+</section>

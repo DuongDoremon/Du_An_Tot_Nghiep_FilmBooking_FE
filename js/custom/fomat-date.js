@@ -1,5 +1,7 @@
 // var dateInput = document.getElementById("dateFomat");
 
+const { log } = require("console");
+
 // // Lắng nghe sự kiện khi giá trị của input thay đỗi
 // dateInput.addEventListener("input", function() {
 //   var selectedDate = new Date(dateInput.value); // Lấy giá trị ngày tháng từ input
@@ -56,15 +58,28 @@ document.body.appendChild(inputElement);
 
 // addTimeInput();
 
-// const dateInput = document.getElementById('myTimeInput');
-// dateInput.addEventListener('input', function() {
-//   const selectedDate = new Date(dateInput.value);
-//   const formattedDate = selectedDate.toLocaleDateString('en-GB', {
-//     day: '2-digit',
-//     month: '2-digit',
-//     year: 'numeric',
-//     hour: '2-digit',
-//     minute: '2-digit'
-//   });
-//   dateInput.value = formattedDate;
-// });
+const dateInput = document.getElementById("myTimeInput");
+dateInput.addEventListener("input", function () {
+  const selectedDate = new Date(dateInput.value);
+  const formattedDate = selectedDate.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  dateInput.value = formattedDate;
+});
+
+// hiển thị ngày khi chọn phim
+function showDateMovie() {
+  var phim = document.getElementById("date_time_movie").value;
+  var dateTimeDiv = document.getElementById("date-movie");
+
+  if (phim === "") {
+    dateTimeDiv.style.display = "none";
+  } else {
+    dateTimeDiv.style.display = "block";
+    console.log('block');
+  }
+}

@@ -67,6 +67,10 @@ myApp.config(function ($routeProvider, $locationProvider) {
       templateUrl: "./pages/seat-manager.html",
       // controller: movieController
       controller: seatController
+    }).when("/form-add-seat",{
+      templateUrl: "./page-detail/form-add-seat.html",
+      // controller: movieController
+      controller: seatController
     })
     .otherwise({
       redirectTo: "/home",
