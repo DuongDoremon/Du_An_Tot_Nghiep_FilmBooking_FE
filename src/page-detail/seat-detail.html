@@ -1,0 +1,37 @@
+<section>
+  <div class="seat-detail-all">
+    <div class="name_room">
+      <h2>Mã phòng: {{seatRoom.code}}</h2>
+      <h2>Tên phòng: {{seatRoom.name}}</h2>
+    </div>
+
+    <div class="table_seat_room">
+      <div class="text_table_seat_room">
+        <h1>Ghế</h1>
+      </div>
+      <div class="table_seat_rooms">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Mã ghế</th>
+              <th scope="col">Số lượng ghế</th>
+              <th scope="col">Hàng ghế</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{seatDetail.code}}</th>
+              <td>{{seatDetail.number}}</td>
+              <td>{{seatDetail.line}}</td>
+              <td><button class="btn btn-primary">thông tin</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="c" ng-repeat="seat in listSeat">
+    <h4>{{seat.room.id}}</h4>
+  </div> -->
+</section>

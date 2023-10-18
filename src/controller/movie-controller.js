@@ -84,7 +84,7 @@ window.movieController = function ($scope, $http, $routeParams) {
     $scope.listUpdateMovie.image = movie.image;
     $scope.listUpdateMovie.movieType = movie.movieType;
     $scope.listUpdateMovie.code = movie.code;
-    $scope.listUpdateMovie.rated.id = movie.rated;
+    $scope.listUpdateMovie.rated.id = movie.rated.id;
     $scope.viTri = index;
   };
   // var current_page = 1;

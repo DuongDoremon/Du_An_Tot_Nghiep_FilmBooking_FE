@@ -20,12 +20,7 @@
   <form action="" class="form_add_room">
     <div class="seat_input">
       <div class="row g-3">
-        <div class="col">
-          <div class="input-box">
-            <label for="">Mời nhập số lượng phòng</label>
-            <input type="text" required ng-model="listAddRoom.name"/>
-          </div>
-        </div>
+       
         <div class="col">
           <div class="select_cinema">
             <label for="">Rạp chiếu</label>
@@ -35,10 +30,16 @@
               ng-model="listAddRoom.cinema.id"
             >
               <option selected>Mời chọn rạp chiếu</option>
-              <option value="{{cinema.id}}" ng-repeat="cinema in listCinemas">
+              <option  ng-repeat="cinema in listCinemas" value="{{cinema.id}}">
                 {{cinema.name}}
               </option>
             </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-box">
+            <label for="">Mời nhập số lượng phòng</label>
+            <input type="number" required ng-model="listAddRoom.quantity"/>
           </div>
         </div>
       </div>

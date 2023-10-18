@@ -8,17 +8,15 @@ window.roomController = function($scope, $http){
         $scope.listCinemas = response.data.data;
     })
     listAddRoom = {
-
         cinema:"",
-        type:"",
-        capacity:"",
-        description:""
+        quantity:"",
     }
     $scope.addRoom = function(event){
         event.preventDefault();
         $http.post(addRoom, $scope.listAddRoom).then(function(response){
             $scope.listRoom.push(response.data.data);
             alert("Thêm thành công");
+            console.log(addRoom);
             window.location.reload();
         })
     }
