@@ -18,13 +18,14 @@ window.scheduleController = function ($scope, $http) {
   // }
   $http.get(scheduleApi).then(function (response) {
     $scope.listSchedule = response.data.data;
+    console.log($scope.listSchedule = response.data.data);
   });
   $scope.addSchedule = function (event) {
     event.preventDefault();
     $http.post(addSchedule, $scope.listAddSchedule).then(function (response) {
       $scope.listSchedule.push(response.data.data);
       alert("Thêm thành công");
-      // window.location.reload();
+      window.location.reload();
     });
   };
   //movie

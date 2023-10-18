@@ -25,7 +25,7 @@
         <div class="col">
           <div class="date">
             <label for="">Hình ảnh</label>
-            <input type="file" required ng-model="listAddFood.image" />
+            <input type="text" required ng-model="listAddFood.image" />
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
         <tr ng-repeat="food in listFood">
           <th scope="row">
             <img
-              src="../../assets/img/{{food.image}}"
+              src="{{food.image}}"
               alt=""
               width="70"
               height="60"

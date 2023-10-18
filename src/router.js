@@ -72,6 +72,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
       // controller: movieController
       controller: seatController
     })
+    .when("/detail-seat-room/:id",{
+      templateUrl: "./page-detail/seat-detail.html",
+      // controller: movieController
+      controller: seatController
+    })
     .otherwise({
       redirectTo: "/home",
     });
